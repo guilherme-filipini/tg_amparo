@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       drawer: DrawerFamilyWidget(),
       appBar: AppBar(
-        iconTheme: IconThemeData(color: AppColors.backgroundColor),
+        iconTheme: IconThemeData(color: AppColors.backgroundColor, size: 35),
         backgroundColor: AppColors.primaryColor,
         actions: [
           IconButton(

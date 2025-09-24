@@ -10,6 +10,7 @@ class CadastroEnderecoScreen extends StatefulWidget {
 }
 
 class _CadastroEnderecoScreenState extends State<CadastroEnderecoScreen> {
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,6 +47,7 @@ class _CadastroEnderecoScreenState extends State<CadastroEnderecoScreen> {
               SizedBox(height: 20),
 
               Form(
+                key: _formKey,
                 child: Column(
                   children: [
                     Row(
@@ -272,6 +274,58 @@ class _CadastroEnderecoScreenState extends State<CadastroEnderecoScreen> {
                           ),
                         ),
                       ),
+                    ),
+                    SizedBox(height: 30),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        TextButton(
+                          style: TextButton.styleFrom(
+                            backgroundColor: AppColors.backgroundColor,
+                            foregroundColor: AppColors.primaryColor,
+                            fixedSize: Size(134, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                              side: BorderSide(
+                                color: AppColors.primaryColor,
+                                width: 2.0,
+                              ),
+                            ),
+                            textStyle: TextStyle(
+                              fontSize: 18,
+                              fontFamily: 'Jost',
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              // Processar dados
+                            }
+                          },
+                          child: Text('Voltar'),
+                        ),
+                        TextButton(
+                          style: TextButton.styleFrom(
+                            backgroundColor: AppColors.primaryColor,
+                            foregroundColor: AppColors.backgroundColor,
+                            fixedSize: Size(134, 50),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            textStyle: TextStyle(
+                              fontSize: 18,
+                              fontFamily: 'Jost',
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              // Processar dados
+                            }
+                          },
+                          child: Text('Concluir'),
+                        ),
+                      ],
                     ),
                   ],
                 ),
